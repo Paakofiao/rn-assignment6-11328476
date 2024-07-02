@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image, } from 'react-native';
+import { StyleSheet, Text, View,Image,ScrollView } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Icon from 'react-native-vector-icons/Ionicons';
 export default function App() {
   return (
+
+    <ScrollView>
     <View style={styles.container}>
       <Text style={styles.text1}>O U R  S T O R Y</Text>
       <Image style={styles.picture} source={require('../my-app/assets/pictures/Logo.png')}/>
@@ -12,9 +14,33 @@ export default function App() {
             <FontAwesome name='shopping-bag' size={25} style={styles.icon3} />
             <Icon name='filter' size={30} style={styles.icon5}  color={'orange'}/>
             <FontAwesome name='list' size={25} style={styles.icon4} />
+          
+          
+          <View style={styles.imageRow}>
+          <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress1.png')}/>
+          <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress2.png')}/>
+          </View>
 
+          <View style={styles.imageRow}>
+          <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress3.png')}/>
+          <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress4.png')}/>
+          </View>
+
+          <View style={styles.imageRow}>
+          <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress5.png')}/>
+          <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress6.png')}/>
+          </View>
+
+          <View style={styles.imageRow}>
+          <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress7.png')}/>
+          </View>
+
+          
       <StatusBar style="auto" />
+    
     </View>
+    </ScrollView>
+   
   );
 }
 
@@ -26,38 +52,64 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   picture: {
-    top: -330,
+    position: "absolute",
+    top: '10%',
     
   },
   picture1: {
-    color: 'black',
-    top:200
+    position:"absolute",
+    top: '-70%',
+    left: '-45%',
   },
   icon1: {
-    left: -150,
-    top:-350,
+    position:"absolute",
+    position:"absolute",
+    left: '10%',
+    top: '10%',
   },
   icon2: {
-    right: -130,
-    top: -385,
+    position:"absolute",
+    right: '20%',
+    top: '10%',
   },
   icon3: {
-  right: -180,
-    top: -411,
+    position:"absolute",
+  right: '5%',
+    top: "10%",
   },
   text1: {
+    position:"absolute",
     fontSize: 25,
     fontWeight: 'bold',
-    top: -210,
-    left: -75,
+    top: '20%',
+    left: '5%',
   },
   icon4: {
-    top:-380,
-    right: -120,
+    position:"absolute",
+    top:'20%',
+    right: '22%',
   },
   icon5: {
-    top:-353,
-    right: -190,
-   
+    position:"absolute",
+    top:'19.5%',
+    right: '3%',
+  },
+  imageContainer:{
+    flexDirection:'column',
+    alignitems: 'center',
+    justifyContent: 'center',
+    marginTop: '30%'
+  },
+  imageRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 70,
+    top: '70%'
+  },
+  picturePair: {
+    width: 150,
+    height: 200,
+    marginHorizontal:10,
+
   }
 });
