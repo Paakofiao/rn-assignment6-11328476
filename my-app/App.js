@@ -1,7 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image,ScrollView } from 'react-native';
+import { StyleSheet, Text, View,Image,ScrollView,TouchableOpacity } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Icon from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
+import Cart from "./screens/Cart"
+
+
+const Stack = createNativeStackNavigator();
+
+
+function MyStack() {
+  return (
+    <Stack.Navigator>
+    <Stack.Screen name="Cart" component={Cart}/>
+    </Stack.Navigator>
+  );
+}
+
+
+
+
+
+
+
+
 export default function App() {
   return (
 
@@ -19,20 +43,32 @@ export default function App() {
           <View style={styles.imageRow}>
           <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress1.png')}/>
           <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress2.png')}/>
+          <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
+            <MaterialIcons name='add-circle' size={25} style={styles.iconOnImage} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
+          <MaterialIcons name='add-circle' size={25} style={styles.iconOnImage1} />
+          </TouchableOpacity>
           </View>
 
           <View style={styles.imageRow}>
           <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress3.png')}/>
           <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress4.png')}/>
+          <MaterialIcons name='add-circle' size={25} style={styles.iconOnImage} />
+          <MaterialIcons name='add-circle' size={25} style={styles.iconOnImage1} />
+          
           </View>
 
           <View style={styles.imageRow}>
           <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress5.png')}/>
           <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress6.png')}/>
+          <MaterialIcons name='add-circle' size={25} style={styles.iconOnImage} />
+          <MaterialIcons name='add-circle' size={25} style={styles.iconOnImage1} />
           </View>
 
           <View style={styles.imageRow}>
           <Image style={styles.picturePair} source={require('../my-app/assets/pictures/dress7.png')}/>
+          <MaterialIcons name='add-circle' size={25} style={styles.iconOnImage} />
           </View>
 
           
@@ -111,5 +147,17 @@ const styles = StyleSheet.create({
     height: 200,
     marginHorizontal:10,
 
-  }
+  },
+  iconOnImage: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    color: 'black',
+  },
+  iconOnImage1: {
+    position: 'absolute',
+    top: 10,
+    right: 180,
+    color: 'black',
+  },
 });
