@@ -5,7 +5,6 @@ export default function Cart() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Your Cart</Text>
-      {/* Add your cart items and other content here */}
       <Text style={styles.text}>No items in your cart.</Text>
     </View>
   );
@@ -19,6 +18,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
+    top:'10%',
+    position: 'absolute',
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
