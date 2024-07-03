@@ -3,11 +3,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen';
 import Cart from './Cart';
+import { CartProvider } from './CartContext';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <CartProvider>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="HomeScreen">
         <Stack.Screen
@@ -22,5 +24,6 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </CartProvider>
   );
 }
